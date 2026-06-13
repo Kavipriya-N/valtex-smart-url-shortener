@@ -12,6 +12,7 @@ import CreateLinkCard from '../components/CreateLinkCard';
 import api from '../api/axios';
 import { Link2, Search, ArrowUpDown, ArrowRight, RefreshCw, Layers, Plus } from 'lucide-react';
 import toast from 'react-hot-toast';
+import { useAuth } from '../context/AuthContext';
 
 export default function Dashboard() {
   const { user } = useAuth();
