@@ -127,3 +127,14 @@
   50%  { top: 95%; }
   100% { top: 5%; }
 }
+
+/* Toast entrance */
+@keyframes toastIn {
+  from { transform: translateY(20px) scale(0.9); opacity: 0; }
+  to { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+/* Spinner */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

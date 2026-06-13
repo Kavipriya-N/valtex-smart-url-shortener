@@ -1,140 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
 :root {
-  /* Premium Dark Mode (Default) - Deep rich black/navy space colors */
-  --bg-base:       #03050C;   /* Deepest space background */
-  --bg-layer1:     #070913;   /* Main page layout */
-  --bg-layer2:     #0D1127;   /* Navigation and sidebar panels */
-  --bg-surface:    rgba(13, 17, 39, 0.45);  /* Frosted glass container layer */
-  --bg-elevated:   rgba(20, 26, 58, 0.6);   /* Interactive panel fields */
-  --bg-hover:      rgba(31, 40, 88, 0.65);   /* Hovered interactive layers */
+  /* Backgrounds */
+  --bg-base:       #04060F;
+  --bg-layer1:     #080C1A;
+  --bg-layer2:     #0C1020;
+  --bg-surface:    #111828;
+  --bg-elevated:   #161E2E;
+  --bg-hover:      #1C2438;
 
-  /* Accents - Linear & Vercel design inspired */
-  --accent-1:      #8B5CF6;   /* Electric Violet */
-  --accent-2:      #06B6D4;   /* Neon Cyan */
-  --accent-3:      #EC4899;   /* Velvet Pink */
-  --accent-4:      #10B981;   /* Emerald Green */
-  --accent-5:      #F59E0B;   /* Radiant Amber */
+  /* Accents */
+  --accent-1:      #7C3AED;
+  --accent-2:      #06B6D4;
+  --accent-3:      #EC4899;
+  --accent-4:      #10B981;
+  --accent-5:      #F59E0B;
 
-  /* Modern Gradient System */
-  --grad-primary:  linear-gradient(135deg, #8B5CF6 0%, #06B6D4 100%);
-  --grad-aurora:   linear-gradient(135deg, #8B5CF6 0%, #EC4899 50%, #06B6D4 100%);
-  --grad-card:     linear-gradient(135deg, rgba(139, 92, 246, 0.06) 0%, rgba(6, 182, 212, 0.04) 100%);
+  /* Gradients */
+  --grad-primary:  linear-gradient(135deg, #7C3AED, #06B6D4);
+  --grad-aurora:   linear-gradient(135deg, #7C3AED 0%, #EC4899 50%, #06B6D4 100%);
+  --grad-card:     linear-gradient(135deg, rgba(124,58,237,0.08), rgba(6,182,212,0.05));
 
-  /* Typography color scaling */
-  --text-primary:  #F8FAFC;
-  --text-secondary:#94A3B8;
-  --text-muted:    #64748B;
+  /* Text */
+  --text-primary:  #F8FAFF;
+  --text-secondary:#8892AA;
+  --text-muted:    #4A5568;
 
-  /* Borders - Soft transparent overlays */
-  --border-subtle:  rgba(255, 255, 255, 0.03);
-  --border-default: rgba(255, 255, 255, 0.07);
-  --border-strong:  rgba(255, 255, 255, 0.14);
+  /* Borders */
+  --border-subtle:  rgba(255,255,255,0.06);
+  --border-default: rgba(255,255,255,0.10);
+  --border-strong:  rgba(255,255,255,0.18);
 
-  /* Modern Box Glows */
-  --glow-violet:   0 0 30px rgba(139, 92, 246, 0.2);
-  --glow-cyan:     0 0 30px rgba(6, 182, 212, 0.15);
+  /* Glows */
+  --glow-violet:   0 0 40px rgba(124,58,237,0.25);
+  --glow-cyan:     0 0 40px rgba(6,182,212,0.20);
 
-  /* Premium SaaS Fonts Pairing */
-  --ff: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  --fb: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  /* Fonts */
+  --ff: 'Space Grotesk', sans-serif;
+  --fb: 'DM Sans', sans-serif;
   --fm: 'JetBrains Mono', monospace;
 
-  /* Spacing Radii */
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
-  --radius-xl: 24px;
-  
-  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-
-  /* ── Input System Variables ── */
-  --input-bg:              #161E2E;
-  --input-bg-focus:        #1C2438;
-  --input-text:            #FFFFFF;
-  --input-text-hover:      #FFFFFF;
-  --input-placeholder:     #94A3B8;
-  --input-placeholder-focus: #64748B;
-  --input-border:          rgba(255, 255, 255, 0.12);
-  --input-border-hover:    rgba(255, 255, 255, 0.22);
-  --input-border-focus:    #7C3AED;
-  --input-shadow-focus:    0 0 0 3px rgba(124, 58, 237, 0.20), 0 0 16px rgba(124, 58, 237, 0.12);
-  --input-shadow-error:    0 0 0 3px rgba(239, 68, 68, 0.20);
-  --input-radius:          10px;
-  --input-padding:         0.75rem 1rem;
-  --input-font-size:       0.9rem;
-  --input-height:          48px;
-  --input-transition:      all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-
-  /* ── Label Variables ── */
-  --label-color:           #CBD5E1;
-  --label-font-size:       0.8rem;
-  --label-font-weight:     500;
-  --label-letter-spacing:  0.4px;
-  --label-margin-bottom:   0.5rem;
-
-  /* ── Spacing Scale (8px base grid) ── */
-  --space-1:   4px;
-  --space-2:   8px;
-  --space-3:   12px;
-  --space-4:   16px;
-  --space-5:   20px;
-  --space-6:   24px;
-  --space-8:   32px;
-  --space-10:  40px;
-  --space-12:  48px;
-  --space-16:  64px;
-  --space-20:  80px;
-  --space-24:  96px;
-
-  /* ── Typography Scale ── */
-  --text-hero:    clamp(2.8rem, 6vw, 4.5rem);
-  --text-h1:      clamp(1.8rem, 3vw, 2.25rem);
-  --text-h2:      1.5rem;
-  --text-h3:      1.25rem;
-  --text-h4:      1.125rem;
-  --text-body:    1rem;
-  --text-sm:      0.875rem;
-  --text-xs:      0.75rem;
-  --text-2xs:     0.6875rem;
-
-  /* ── Font Weights ── */
-  --fw-regular:  400;
-  --fw-medium:   500;
-  --fw-semibold: 600;
-  --fw-bold:     700;
-  --fw-black:    800;
-
-  /* ── Line Heights ── */
-  --lh-tight:   1.1;
-  --lh-snug:    1.3;
-  --lh-normal:  1.5;
-  --lh-relaxed: 1.7;
-  --lh-loose:   2;
-
-  /* ── Letter Spacing ── */
-  --ls-tighter: -0.05em;
-  --ls-tight:   -0.025em;
-  --ls-normal:  0em;
-  --ls-wide:    0.025em;
-  --ls-wider:   0.05em;
-  --ls-widest:  0.1em;
-
-  /* ── Component Sizes ── */
-  --navbar-height:        64px;
-  --navbar-height-scroll: 52px;
-  --sidebar-width:        240px;
-  --sidebar-width-collapsed: 68px;
-  --card-padding:         1.5rem;
-  --card-padding-sm:      1rem;
-  --table-row-height:     60px;
-  --table-cell-px:        1.25rem;
-  --table-cell-py:        1rem;
-  --input-height:         48px;
-  --btn-height:           44px;
-  --btn-height-sm:        36px;
-  --btn-height-lg:        52px;
-
-  /* ── Border Radius ── */
-  --radius-xs:  4px;
+  /* Radius */
   --radius-sm:  8px;
   --radius-md:  12px;
   --radius-lg:  16px;
@@ -142,65 +48,53 @@
   --radius-2xl: 24px;
   --radius-full: 9999px;
 
-  /* ── Shadows ── */
-  --shadow-sm:  0 1px 3px rgba(0,0,0,0.2), 0 1px 2px rgba(0,0,0,0.12);
-  --shadow-md:  0 4px 16px rgba(0,0,0,0.25), 0 2px 8px rgba(0,0,0,0.15);
-  --shadow-lg:  0 8px 32px rgba(0,0,0,0.3),  0 4px 16px rgba(0,0,0,0.2);
-  --shadow-xl:  0 16px 48px rgba(0,0,0,0.35);
-  --shadow-card: 0 2px 12px rgba(0,0,0,0.2);
-  --shadow-card-hover: 0 8px 32px rgba(124,58,237,0.15), 0 2px 8px rgba(0,0,0,0.2);
+  /* Input system */
+  --input-bg:              #161E2E;
+  --input-bg-focus:        #1C2438;
+  --input-text:            #FFFFFF;
+  --input-placeholder:     #94A3B8;
+  --input-border:          rgba(255,255,255,0.12);
+  --input-border-hover:    rgba(255,255,255,0.22);
+  --input-border-focus:    #7C3AED;
+  --input-shadow-focus:    0 0 0 3px rgba(124,58,237,0.20), 0 0 16px rgba(124,58,237,0.12);
+  --input-shadow-error:    0 0 0 3px rgba(239,68,68,0.20);
+  --input-radius:          10px;
+  --input-padding:         0.75rem 1rem;
+  --input-font-size:       0.9rem;
+  --input-height:          48px;
+  --input-transition:      all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 
-  /* ── Z-Index Scale ── */
-  --z-base:    1;
-  --z-dropdown: 10;
-  --z-sticky:   20;
-  --z-fixed:    30;
-  --z-modal-backdrop: 40;
-  --z-modal:    50;
-  --z-toast:    60;
+  /* Label */
+  --label-color:           #CBD5E1;
+  --label-font-size:       0.8rem;
+  --label-font-weight:     500;
+  --label-letter-spacing:  0.4px;
+  --label-margin-bottom:   0.5rem;
 
-  /* ── Transitions ── */
-  --duration-fast:   150ms;
-  --duration-normal: 250ms;
-  --duration-slow:   400ms;
-  --ease-default:    cubic-bezier(0.4, 0, 0.2, 1);
-  --ease-spring:     cubic-bezier(0.34, 1.56, 0.64, 1);
-  --ease-out:        cubic-bezier(0, 0, 0.2, 1);
-  --transition-fast: all var(--duration-fast) var(--ease-default);
-  --transition:      all var(--duration-normal) var(--ease-default);
-  --transition-slow: all var(--duration-slow) var(--ease-default);
+  /* Transitions */
+  --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body.theme-light {
-  /* Premium Light Mode - Crisp slate/blue-gray design elements */
-  --bg-base:       #F1F5F9;
-  --bg-layer1:     #F8FAFC;
-  --bg-layer2:     #FFFFFF;
-  --bg-surface:    rgba(255, 255, 255, 0.75);
-  --bg-elevated:   rgba(241, 245, 249, 0.9);
-  --bg-hover:      rgba(226, 232, 240, 0.95);
-  
-  --text-primary:  #0F172A;
-  --text-secondary:#475569;
-  --text-muted:    #94A3B8;
-  
-  --border-subtle:  rgba(15, 23, 42, 0.04);
-  --border-default: rgba(15, 23, 42, 0.08);
-  --border-strong:  rgba(15, 23, 42, 0.15);
-  
-  --glow-violet:   0 0 25px rgba(139, 92, 246, 0.08);
-  --glow-cyan:     0 0 20px rgba(6, 182, 212, 0.06);
-
-  /* ── Input System Variables (Light Mode) ── */
+  --bg-base:       #F5F7FF;
+  --bg-layer1:     #EEF1FA;
+  --bg-layer2:     #E8EBF5;
+  --bg-surface:    #FFFFFF;
+  --bg-elevated:   #F0F3FF;
+  --bg-hover:      #E4E8F8;
+  --text-primary:  #0A0C18;
+  --text-secondary:#4A5278;
+  --text-muted:    #8892AA;
+  --border-subtle:  rgba(0,0,0,0.06);
+  --border-default: rgba(0,0,0,0.10);
+  --border-strong:  rgba(0,0,0,0.18);
+  --glow-violet:   0 0 30px rgba(124,58,237,0.12);
+  --glow-cyan:     0 0 25px rgba(6,182,212,0.10);
   --input-bg:              #FFFFFF;
   --input-bg-focus:        #F8FAFF;
   --input-text:            #111827;
-  --input-text-hover:      #111827;
   --input-placeholder:     #6B7280;
-  --input-placeholder-focus: #9CA3AF;
-  --input-border:          rgba(0, 0, 0, 0.12);
-  --input-border-hover:    rgba(0, 0, 0, 0.22);
-  --input-border-focus:    #7C3AED;
-  --input-shadow-focus:    0 0 0 3px rgba(124, 58, 237, 0.15), 0 0 12px rgba(124, 58, 237, 0.08);
+  --input-border:          rgba(0,0,0,0.12);
+  --input-border-hover:    rgba(0,0,0,0.22);
   --label-color:           #374151;
 }

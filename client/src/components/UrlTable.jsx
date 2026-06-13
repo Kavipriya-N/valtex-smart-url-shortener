@@ -25,8 +25,8 @@ export default function UrlTable({ urls, onDelete, onEdit, onQR, onAnalytics, ne
 
   return (
     <div className="table-card" style={{ width: '100%' }}>
-      <div style={{ overflowX: 'auto' }}>
-        <table className="data-table">
+      <div className="table-scroll">
+        <table>
           <colgroup>
             <col style={{ width: '28%' }} />  {/* Original URL */}
             <col style={{ width: '18%' }} />  {/* Short Link */}

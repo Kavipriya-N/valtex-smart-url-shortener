@@ -13,17 +13,17 @@ export default function MetricCard({
 
   return (
     <div className={`metric-card ${colorClass}`}>
-      <div className="metric-card-label">{label}</div>
-      <div className="metric-card-value">
+      <div className="metric-label">{label}</div>
+      <div className="metric-value">
         {typeof value === 'number' ? animatedValue.toLocaleString() : value}
       </div>
       {change && (
-        <div className={`metric-card-change ${changeDir}`}>
+        <div className={`metric-change ${changeDir}`}>
           {changeDir === 'up' ? '↑' : changeDir === 'down' ? '↓' : ''} {change}
         </div>
       )}
       {icon && (
-        <span className="metric-card-icon" aria-hidden="true">
+        <span className="metric-icon" aria-hidden="true">
           {icon}
         </span>
       )}

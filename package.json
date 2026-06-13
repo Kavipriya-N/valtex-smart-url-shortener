@@ -1,0 +1,16 @@
+{
+  "name": "valtex",
+  "version": "1.0.0",
+  "description": "VALTEX — Smart URL Shortener and Analytics Platform",
+  "private": true,
+  "scripts": {
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "install:all": "npm install && cd server && npm install && cd ../client && npm install",
+    "build": "cd client && npm run build",
+    "start:server": "cd server && npm start"
+  },
+  "keywords": ["url-shortener", "analytics", "react", "nodejs", "mongodb"],
+  "author": "VALTEX Team",
+  "license": "MIT"
+}

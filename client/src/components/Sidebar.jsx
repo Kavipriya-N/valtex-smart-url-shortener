@@ -14,7 +14,7 @@ export default function Sidebar({ activeTab, setActiveTab, linkCount }) {
   return (
     <aside className="sidebar" role="navigation" aria-label="Sidebar">
       {/* Main nav group */}
-      <div className="section-label">Main</div>
+      <div className="sidebar-section-label">Main</div>
 
       <div
         className={`sidebar-item ${activeTab === 'overview' ? 'active' : ''}`}
@@ -48,7 +48,7 @@ export default function Sidebar({ activeTab, setActiveTab, linkCount }) {
       </div>
 
       <div className="sidebar-divider" />
-      <div className="section-label">Account</div>
+      <div className="sidebar-section-label">Account</div>
 
       <div
         className={`sidebar-item ${activeTab === 'profile' ? 'active' : ''}`}

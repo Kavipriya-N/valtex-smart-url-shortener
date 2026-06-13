@@ -199,10 +199,10 @@ export default function Dashboard() {
     <div className="dashboard-page">
       <Navbar />
 
-      <div className="dash-layout">
+      <div className="dash">
         <Sidebar activeTab={activeTab} setActiveTab={handleTabChange} linkCount={totalUrlsCount} />
 
-        <main className="dash-main animate-fade">
+        <main className="dash-main">
           {activeTab === 'overview' && (
             <div>
               <div className="page-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>

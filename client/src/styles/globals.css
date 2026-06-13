@@ -1,223 +1,30 @@
 @import './variables.css';
 @import './animations.css';
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 16px;
-  scroll-behavior: smooth;
-  -webkit-text-size-adjust: 100%;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
 body {
   background: var(--bg-layer1);
   color: var(--text-primary);
   font-family: var(--fb);
-  font-size: var(--text-body);
-  font-weight: var(--fw-regular);
-  line-height: var(--lh-normal);
+  font-size: 1rem;
+  line-height: 1.5;
   min-height: 100vh;
-  transition: background var(--duration-slow) var(--ease-default),
-              color var(--duration-normal) var(--ease-default);
+  transition: background 0.5s ease, color 0.4s ease;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-  transition: var(--transition);
-}
-
-button {
-  cursor: pointer;
+a { color: inherit; text-decoration: none; }
+button { cursor: pointer; font-family: var(--fb); }
+input, textarea, select {
   font-family: var(--fb);
-  outline: none;
-}
-
-/* ─── Global Input Reset & Base ─── */
-input,
-textarea,
-select {
-  font-family: var(--fb);
-  font-size: var(--input-font-size);
-  color: var(--input-text);
-  background: var(--input-bg);
-  border: 1px solid var(--input-border);
-  border-radius: var(--input-radius);
-  padding: var(--input-padding);
-  outline: none;
-  width: 100%;
-  transition: var(--input-transition);
-  -webkit-text-fill-color: var(--input-text);
-  box-shadow: none;
-  appearance: none;
-  -webkit-appearance: none;
-}
-
-input:hover,
-textarea:hover,
-select:hover {
-  border-color: var(--input-border-hover);
-  background: var(--input-bg);
   color: var(--input-text);
   -webkit-text-fill-color: var(--input-text);
 }
 
-input:focus,
-textarea:focus,
-select:focus {
-  border-color: var(--input-border-focus);
-  background: var(--input-bg-focus);
-  color: var(--input-text);
-  -webkit-text-fill-color: var(--input-text);
-  box-shadow: var(--input-shadow-focus);
-}
-
-input::placeholder,
-textarea::placeholder {
-  color: var(--input-placeholder);
-  opacity: 1;
-  transition: color 0.2s ease, opacity 0.2s ease;
-}
-
-input:focus::placeholder,
-textarea:focus::placeholder {
-  color: var(--input-placeholder-focus);
-  opacity: 0.7;
-}
-
-/* Fix browser autofill overriding text color */
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
-  -webkit-text-fill-color: var(--input-text) !important;
-  -webkit-box-shadow: 0 0 0 1000px var(--input-bg) inset !important;
-  box-shadow: 0 0 0 1000px var(--input-bg) inset !important;
-  background-color: var(--input-bg) !important;
-  caret-color: var(--input-text);
-  transition: background-color 9999s ease-in-out 0s;
-}
-
-/* Light mode autofill fix */
-body.theme-light input:-webkit-autofill,
-body.theme-light input:-webkit-autofill:hover,
-body.theme-light input:-webkit-autofill:focus {
-  -webkit-text-fill-color: #111827 !important;
-  -webkit-box-shadow: 0 0 0 1000px #FFFFFF inset !important;
-}
-
-/* Select element arrow */
-select {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2394A3B8' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 12px center;
-  padding-right: 36px;
-  cursor: pointer;
-}
-
-body.theme-light select {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236B7280' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
-}
-
-/* Textarea resize */
-textarea {
-  resize: vertical;
-  min-height: 100px;
-  line-height: 1.6;
-}
-
-/* Disable number spinners */
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-/* Date input calendar icon color */
-input[type="date"]::-webkit-calendar-picker-indicator {
-  filter: invert(0.6);
-  cursor: pointer;
-}
-body.theme-light input[type="date"]::-webkit-calendar-picker-indicator {
-  filter: invert(0.3);
-}
-
-/* Caret color */
-input, textarea {
-  caret-color: var(--accent-1);
-}
-
-/* Input error state */
-input.input-error,
-textarea.input-error {
-  border-color: #EF4444;
-  box-shadow: var(--input-shadow-error);
-}
-
-/* Input success state */
-input.input-success,
-textarea.input-success {
-  border-color: #10B981;
-  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
-}
-
-/* ── Typography Reset ── */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--ff);
-  font-weight: var(--fw-bold);
-  line-height: var(--lh-tight);
-  letter-spacing: var(--ls-tight);
-  color: var(--text-primary);
-  margin: 0;
-}
-
-h1 { font-size: var(--text-h1); font-weight: var(--fw-black); }
-h2 { font-size: var(--text-h2); font-weight: var(--fw-bold); }
-h3 { font-size: var(--text-h3); font-weight: var(--fw-bold); }
-h4 { font-size: var(--text-h4); font-weight: var(--fw-semibold); }
-
-p { margin: 0; line-height: var(--lh-relaxed); }
-
-/* ── Page Header Component ── */
-.page-header {
-  margin-bottom: var(--space-8);
-}
-
-.page-header h1 {
-  font-family: var(--ff);
-  font-size: var(--text-h1);
-  font-weight: var(--fw-black);
-  letter-spacing: var(--ls-tighter);
-  line-height: var(--lh-snug);
-  color: var(--text-primary);
-  margin-bottom: var(--space-2);
-}
-
-.page-header p {
-  font-size: var(--text-sm);
-  color: var(--text-secondary);
-  line-height: var(--lh-relaxed);
-  font-weight: var(--fw-regular);
-}
-
-/* ── Section Label ── */
-.section-label {
-  font-size: var(--text-2xs);
-  font-weight: var(--fw-semibold);
-  color: var(--text-muted);
-  letter-spacing: var(--ls-widest);
-  text-transform: uppercase;
-  margin-bottom: var(--space-3);
-}
-
-/* ── Gradient Text ── */
 .grd {
   background: var(--grad-aurora);
   -webkit-background-clip: text;
@@ -226,50 +33,34 @@ p { margin: 0; line-height: var(--lh-relaxed); }
   display: inline-block;
 }
 
-/* Scrollbar styling */
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-::-webkit-scrollbar-thumb {
-  background: var(--border-strong);
-  border-radius: 100px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--text-muted);
-}
-
-/* Glass panel */
 .glass {
-  background: var(--bg-surface);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+  background: rgba(17,24,40,0.6);
+  backdrop-filter: blur(20px);
   border: 1px solid var(--border-default);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
-
 body.theme-light .glass {
-  background: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+  background: rgba(255,255,255,0.75);
 }
 
-/* Card shimmer light border */
-.shine-border {
-  position: relative;
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 100px; }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--input-text) !important;
+  -webkit-box-shadow: 0 0 0 1000px var(--input-bg) inset !important;
+  box-shadow: 0 0 0 1000px var(--input-bg) inset !important;
+  transition: background-color 9999s ease-in-out 0s;
+  caret-color: var(--accent-1);
 }
-.shine-border::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1.5px;
-  background: linear-gradient(90deg, transparent 0%, var(--accent-1) 30%, var(--accent-2) 70%, transparent 100%);
-  background-size: 200% 100%;
-  animation: shineBar 6s linear infinite;
-  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-  pointer-events: none;
+
+body.theme-light input:-webkit-autofill,
+body.theme-light input:-webkit-autofill:hover,
+body.theme-light input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #111827 !important;
+  -webkit-box-shadow: 0 0 0 1000px #FFFFFF inset !important;
 }
+
+@keyframes spin { to { transform: rotate(360deg); } }
