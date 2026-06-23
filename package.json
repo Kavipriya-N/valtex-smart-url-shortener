@@ -1,16 +1,44 @@
 {
   "name": "valtex",
   "version": "1.0.0",
-  "description": "VALTEX — Smart URL Shortener and Analytics Platform",
+  "description": "VALTEX Smart URL Shortener and Analytics Platform",
   "private": true,
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
   "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
     "dev:server": "cd server && npm run dev",
     "dev:client": "cd client && npm run dev",
+    "start": "npm run dev",
     "install:all": "npm install && cd server && npm install && cd ../client && npm install",
+    "install:server": "cd server && npm install",
+    "install:client": "cd client && npm install",
     "build": "cd client && npm run build",
-    "start:server": "cd server && npm start"
+    "build:client": "cd client && npm run build",
+    "preview": "cd client && npm run preview",
+    "lint": "cd client && npm run lint 2>/dev/null || echo 'No lint config'",
+    "clean": "rm -rf server/node_modules client/node_modules node_modules",
+    "clean:install": "npm run clean && npm run install:all",
+    "test": "echo 'No tests configured yet'",
+    "prepare": "echo 'Setup complete'"
   },
-  "keywords": ["url-shortener", "analytics", "react", "nodejs", "mongodb"],
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "keywords": [
+    "url-shortener",
+    "analytics",
+    "react",
+    "nodejs",
+    "mongodb",
+    "valtex"
+  ],
   "author": "VALTEX Team",
-  "license": "MIT"
+  "license": "MIT",
+  "workspaces": [],
+  "dependencies": {
+    "wrap-ansi": "^10.0.0"
+  }
 }

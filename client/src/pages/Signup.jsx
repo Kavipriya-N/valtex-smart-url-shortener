@@ -46,7 +46,9 @@ export default function Signup() {
       toast.success('Account created successfully!');
       navigate('/dashboard');
     } catch (err) {
-      const errMsg = err.response?.data?.message || 'Registration failed. Email might already be in use.';
+      const errMsg = !err.response
+        ? 'Could not connect to the server. Please ensure the backend server is running.'
+        : (err.response?.data?.message || 'Registration failed. Please try again.');
       setError(errMsg);
       toast.error(errMsg);
     } finally {

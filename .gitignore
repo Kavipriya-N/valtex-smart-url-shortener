@@ -1,29 +1,70 @@
-# Dependencies
+# ── Dependencies ──────────────────────────
 node_modules/
 client/node_modules/
 server/node_modules/
+**/node_modules/
 
-# Environment files
+# ── Environment secrets ───────────────────
 .env
-client/.env
+.env.local
+.env.production
+.env.*.local
 server/.env
+client/.env
 
-# Build outputs
+# ── Build outputs ─────────────────────────
 client/dist/
 client/build/
 server/dist/
+dist/
+build/
 
-# OS files
-.DS_Store
-Thumbs.db
+# ── Logs ──────────────────────────────────
 *.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+logs/
 
-# Editor
-.vscode/
+# ── OS files ──────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ── Editor directories ────────────────────
+.vscode/settings.json
 .idea/
 *.swp
 *.swo
+*.tmp
+*~
 
-# Vite cache
+# ── Vite ──────────────────────────────────
 client/.vite/
 **/.cache/
+.cache/
+
+# ── TypeScript ────────────────────────────
+*.tsbuildinfo
+
+# ── Testing ───────────────────────────────
+coverage/
+.nyc_output/
+
+# ── Misc ──────────────────────────────────
+.npm
+.eslintcache
+.stylelintcache
+
+# ── DO NOT IGNORE THESE ───────────────────
+# .mcp.json              <- MCP config (commit this)
+# antigravity.config.json <- Antigravity config (commit this)
+# .env.example           <- Example env (commit this)
+# package.json           <- Always commit
+# vite.config.js         <- Always commit

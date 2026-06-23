@@ -47,7 +47,9 @@ export default function Login() {
       toast.success('Successfully logged in!');
       navigate('/dashboard');
     } catch (err) {
-      const errMsg = err.response?.data?.message || 'Login failed. Please check your credentials.';
+      const errMsg = !err.response
+        ? 'Could not connect to the server. Please ensure the backend server is running.'
+        : (err.response?.data?.message || 'Login failed. Please check your credentials.');
       setErrors({ email: errMsg });
       toast.error(errMsg);
     } finally {

@@ -1,0 +1,42 @@
+{
+  "version": "1.0",
+  "project": {
+    "name": "VALTEX",
+    "type": "fullstack",
+    "language": "javascript"
+  },
+  "services": [
+    {
+      "name": "backend",
+      "type": "node",
+      "path": "./server",
+      "command": "npm run dev",
+      "port": 5000,
+      "env": "./server/.env",
+      "healthCheck": "http://localhost:5000/api/health"
+    },
+    {
+      "name": "frontend",
+      "type": "vite",
+      "path": "./client",
+      "command": "npm run dev",
+      "port": 5173,
+      "env": "./client/.env"
+    }
+  ],
+  "database": {
+    "type": "mongodb",
+    "host": "127.0.0.1",
+    "port": 27017,
+    "name": "valtex_fresh",
+    "uri": "mongodb://127.0.0.1:27017/valtex_fresh"
+  },
+  "install": {
+    "command": "npm run install:all",
+    "order": ["root", "server", "client"]
+  },
+  "build": {
+    "command": "npm run build",
+    "output": "client/dist"
+  }
+}

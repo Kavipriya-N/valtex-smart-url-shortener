@@ -1,0 +1,48 @@
+{
+  "mcpVersion": "1.0",
+  "name": "valtex",
+  "version": "1.0.0",
+  "description": "VALTEX Smart URL Shortener and Analytics Platform",
+  "type": "fullstack",
+  "framework": {
+    "frontend": {
+      "type": "react",
+      "path": "client",
+      "packageManager": "npm",
+      "devCommand": "npm run dev",
+      "buildCommand": "npm run build",
+      "outputDir": "client/dist",
+      "port": 5173,
+      "entry": "client/src/main.jsx"
+    },
+    "backend": {
+      "type": "nodejs",
+      "path": "server",
+      "packageManager": "npm",
+      "devCommand": "npm run dev",
+      "startCommand": "npm start",
+      "port": 5000,
+      "entry": "server/server.js"
+    }
+  },
+  "database": {
+    "type": "mongodb",
+    "uri": "mongodb://127.0.0.1:27017/valtex_fresh",
+    "name": "valtex_fresh"
+  },
+  "env": {
+    "server": "server/.env",
+    "client": "client/.env"
+  },
+  "scripts": {
+    "install": "npm run install:all",
+    "dev": "npm run dev",
+    "build": "npm run build",
+    "start": "npm start"
+  },
+  "ports": {
+    "frontend": 5173,
+    "backend": 5000,
+    "database": 27017
+  }
+}
